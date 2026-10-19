@@ -37,6 +37,12 @@ export function buildRecordingButtons(o: RecordingButtonsOptions): HTMLElement {
   const ref = button('Reference', '', 'voice', 'ref');
   attachPlayButton(ref, () => playTts(o.phrase.text, o.voiceName), o.onError);
   box.appendChild(ref);
+  if (first && !latest) {
+    const hint = document.createElement('div');
+    hint.className = 'rec-hint';
+    hint.textContent = 'One take so far. The next clean hit of this phrase adds "Now" to compare.';
+    box.appendChild(hint);
+  }
   return box;
 }
 

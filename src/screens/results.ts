@@ -25,8 +25,9 @@ export function mountResults(o: ResultsOptions): void {
   const withRecordings = s.entries.filter((e) => {
     if (seen.has(e.phrase.id)) return false;
     seen.add(e.phrase.id);
-    return o.recordings !== null && hasComparison(o.records[e.phrase.id]);
+    return o.recordings !== null && Boolean(o.records[e.phrase.id]?.recordings?.first);
   });
+  const pairs = withRecordings.filter((e) => hasComparison(o.records[e.phrase.id])).length;
   o.root.innerHTML = `
     <div class="screen results">
       <p class="big-score"><small>${o.newBestScore ? 'NEW BEST SCORE' : 'SCORE'}</small>${s.score}</p>
@@ -62,7 +63,7 @@ export function mountResults(o: ResultsOptions): void {
   const recBox = o.root.querySelector<HTMLElement>('#recordings')!;
   if (withRecordings.length > 0 && o.recordings) {
     const h = document.createElement('h3');
-    h.textContent = `Your recordings (${withRecordings.length})`;
+    h.textContent = `Your recordings (${withRecordings.length}${pairs > 0 ? `, ${pairs} to compare` : ''})`;
     recBox.appendChild(h);
     for (const e of withRecordings) {
       const row = document.createElement('div');

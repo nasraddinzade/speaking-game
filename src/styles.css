@@ -924,3 +924,14 @@ select option {
 .recordings-screen .rec-row {
   justify-content: space-between;
 }
+
+.rec-hint {
+  flex-basis: 100%;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: left;
+}
+
+.rec-buttons.large .rec-hint {
+  text-align: center;
+}

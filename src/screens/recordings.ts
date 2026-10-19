@@ -22,7 +22,13 @@ export function mountRecordingsScreen(o: RecordingsScreenOptions): void {
   o.root.innerHTML = `
     <div class="screen results recordings-screen">
       <h2 class="compare-title">My recordings</h2>
-      <p class="subtitle">${o.api === null ? 'Recordings need the launcher (npm start): files are kept next to the app.' : o.entries.length === 0 ? 'No pairs yet. A phrase gets a pair once it has two clean hits on different runs.' : `${o.entries.length} phrase${o.entries.length === 1 ? '' : 's'} with a first and a latest take.`}</p>
+      <p class="subtitle">${
+        o.api === null
+          ? 'Recordings need the launcher (npm start): files are kept next to the app.'
+          : o.entries.length === 0
+            ? 'Nothing recorded yet. Every clean hit saves your take; the second clean hit of the same phrase adds the comparison.'
+            : `${o.entries.length} recorded phrase${o.entries.length === 1 ? '' : 's'}, ${pairCount(o.entries)} with two takes to compare.`
+      }</p>
       <div class="row"><button class="ghost" id="back">Back</button></div>
       <div class="stumbles" id="list"></div>
       ${o.folder ? `<div class="hint">Files: ${esc(o.folder)}</div>` : ''}
@@ -44,6 +50,10 @@ export function mountRecordingsScreen(o: RecordingsScreenOptions): void {
     stopPlayback();
     o.onBack();
   });
+}
+
+function pairCount(entries: ComparisonEntry[]): number {
+  return entries.filter((e) => e.record.recordings?.first && e.record.recordings.latest).length;
 }
 
 function esc(s: string): string {

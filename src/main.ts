@@ -11,7 +11,7 @@ import { mountResults } from './screens/results';
 import { createMockRecognizer, type MockRecognizer } from './speech/mock';
 import { createWebSpeechRecognizer, getSpeechRecognitionCtor, type Recognizer, type TimedWord } from './speech/recognizer';
 import { recordingSupported } from './speech/recorder';
-import { STORAGE_WARNING_BYTES, cleanupCandidates, comparisonList, storeCleanRecording } from './storage/recordings';
+import { STORAGE_WARNING_BYTES, cleanupCandidates, recordingList, storeCleanRecording } from './storage/recordings';
 import { createStorage, exportSave, importSaveFromFile, type Storage } from './storage/storage';
 
 const PHRASES = phrasesJson as Phrase[];
@@ -102,7 +102,7 @@ async function showHome(): Promise<void> {
   game = null;
   recognizer.stop();
   const location_ = await storage.location();
-  const pairs = comparisonList(PHRASES, save).length;
+  const recorded = recordingList(PHRASES, save).length;
   const candidates = cleanupCandidates(save, dayKey()).reduce((n, c) => n + c.files.length, 0);
   mountHome({
     root,
@@ -113,7 +113,7 @@ async function showHome(): Promise<void> {
       storage.backend === 'file'
         ? `Progress file: ${location_ ?? 'data/progress.json'}`
         : 'Progress is stored in this browser profile (no launcher API found). Use Export to keep a file.',
-    recordingPairs: pairs,
+    recordingPairs: recorded,
     storageWarning: storageWarning ? { totalMB: storageWarning.totalMB, candidateFiles: candidates, onCleanup: () => void cleanupOldRecordings() } : null,
     onRecordings: () => showRecordings(),
     onPlay(settings) {
@@ -160,7 +160,7 @@ async function showHome(): Promise<void> {
 function showRecordings(): void {
   mountRecordingsScreen({
     root,
-    entries: comparisonList(PHRASES, save),
+    entries: recordingList(PHRASES, save),
     api: storage.recordings,
     voiceName: save.settings.voiceName,
     today: dayKey(),

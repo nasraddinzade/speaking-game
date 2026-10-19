@@ -65,12 +65,27 @@ export interface ComparisonEntry {
   record: PhraseProgress;
 }
 
-/** All phrases with two different recordings, newest first. */
-export function comparisonList(phrases: Phrase[], save: SaveFile): ComparisonEntry[] {
+function newestDate(r: PhraseProgress): string {
+  return r.recordings?.latest?.date ?? r.recordings?.first?.date ?? '';
+}
+
+/** All phrases with at least one recording, newest first. Pairs come before single takes of the same day. */
+export function recordingList(phrases: Phrase[], save: SaveFile): ComparisonEntry[] {
   const byId = new Map(phrases.map((p) => [p.id, p]));
   return Object.values(save.phrases)
-    .filter((r) => r.recordings?.first && r.recordings.latest && r.recordings.first.file !== r.recordings.latest.file)
+    .filter((r) => r.recordings?.first || r.recordings?.latest)
     .map((record) => ({ record, phrase: byId.get(record.phraseId) }))
     .filter((x): x is ComparisonEntry => Boolean(x.phrase))
-    .sort((a, b) => (b.record.recordings!.latest!.date > a.record.recordings!.latest!.date ? 1 : -1));
+    .sort((a, b) => {
+      const d = newestDate(b.record).localeCompare(newestDate(a.record));
+      if (d !== 0) return d;
+      return Number(Boolean(b.record.recordings?.latest)) - Number(Boolean(a.record.recordings?.latest));
+    });
+}
+
+/** Only phrases with two different recordings, newest first. */
+export function comparisonList(phrases: Phrase[], save: SaveFile): ComparisonEntry[] {
+  return recordingList(phrases, save).filter(
+    (e) => e.record.recordings?.first && e.record.recordings.latest && e.record.recordings.first.file !== e.record.recordings.latest.file,
+  );
 }
