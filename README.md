@@ -45,7 +45,7 @@ Chrome itself has working recognition (verified end to end with a WAV file fed i
 - A phrase spawns above the field and falls at a constant speed for the whole run.
 - The zone is a band. Its height comes from the phrase length: `expectedSeconds = wordCount / 150 * 60`, `zoneHeight = expectedSeconds * fallSpeed * 1.4` plus the rendered height of the phrase itself, so the time between the phrase top touching the zone top and the phrase bottom leaving the zone bottom is exactly `expectedSeconds * 1.4`.
 - Recognition (`continuous`, `interimResults`, `en-US`) starts once per run with the microphone track from getUserMedia (`recognition.start(track)`), and is only restarted if the browser ends the session on its own.
-- Each recognized word carries a timestamp. Words whose timestamp falls inside a phrase's window (plus a 700 ms recognition-latency allowance) count for that phrase. Words heard during a pause never count.
+- Each recognized word carries a timestamp. Words whose timestamp falls inside a phrase's window count for that phrase, with a 600 ms early-start allowance before the zone (players naturally begin a beat before the phrase touches it) and a 700 ms recognition-latency allowance after it. The phrase still has to be finished inside the zone. Words heard during a pause never count.
 - Matching is per word after normalization on both sides: lowercase, no punctuation, contractions expanded (`gonna` = `going to`, `I'd` = `I would`, `can't` = `can not`...). `matchRatio = matched words / reference words`, clean threshold 0.85. Words light up as they are heard.
 - Outcomes: clean +10, late +4 (finished within 2 s after leaving the zone), word miss 0, silence -5. Every 5 clean hits in a row raise the multiplier by 0.5, up to x3; anything but clean resets it.
 - After a word miss or silence the reference audio plays (system `speechSynthesis`, en-US or en-GB voice) and the game pauses until it finishes. Listen buttons are also on the pause screen and the results screen.
@@ -55,7 +55,7 @@ Keys during a run: `Esc` / `Space` pause and resume, `T` translation (paused), `
 
 ## Recordings
 
-Every clean hit is recorded (MediaRecorder on the same microphone stream the recognizer uses, `audio/webm;codecs=opus` at 32 kbps, from 200 ms before the phrase enters the zone to 300 ms after it leaves). Misses are not recorded. Each phrase keeps two files in `data/recordings/`:
+Every clean hit is recorded (MediaRecorder on the same microphone stream the recognizer uses, `audio/webm;codecs=opus` at 32 kbps, from 200 ms before the earliest counted speech, that is 800 ms before the phrase enters the zone, to 300 ms after it leaves). Misses are not recorded. Each phrase keeps two files in `data/recordings/`:
 
 - `{phraseId}_first.webm`: the very first clean take, never overwritten (the launcher refuses to replace it).
 - `{phraseId}_latest.webm`: the most recent clean take, replaced on every clean hit.

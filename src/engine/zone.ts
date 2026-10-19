@@ -91,6 +91,12 @@ export function phraseTopAt(spawnMs: number, phraseHeight: number, fallSpeed: nu
   return -phraseHeight + (fallSpeed * (nowMs - spawnMs)) / 1000;
 }
 
+/**
+ * Early-start allowance: a player who reads the phrase on its way down naturally
+ * starts a beat before its top touches the zone. Words heard this long before the
+ * zone still belong to the phrase; the phrase must still be finished inside it.
+ */
+export const EARLY_START_MS = 600;
 /** Recognition latency allowance: results for speech inside the zone arrive a bit later. */
 export const RECOGNITION_LATENCY_MS = 700;
 /** How long after leaving the zone a phrase can still be finished for the "late" outcome. */

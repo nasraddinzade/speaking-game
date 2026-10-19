@@ -102,11 +102,14 @@ export function createWebSpeechRecognizer(events: RecognizerEvents = {}): Recogn
 
   const splitWords = (s: string) => s.trim().split(/\s+/).filter((w) => w.length > 0);
 
+  const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9']/g, '');
   const mergeTimed = (prev: TimedWord[], next: string[], now: number, final: boolean): TimedWord[] =>
     next.map((text, i) => {
       const old = prev[i];
-      // A revised word keeps the earlier timestamp: it was spoken then, only its spelling changed.
-      return { text, atMs: old ? old.atMs : now, final };
+      // The same word at the same position keeps its timestamp. A different word is treated as
+      // new: inheriting an older stamp could push a freshly spoken word out of its phrase window
+      // (for example when the engine drops words at the front of a revised interim result).
+      return { text, atMs: old && norm(old.text) === norm(text) ? old.atMs : now, final };
     });
 
   const handleResult = (ev: SpeechRecognitionEventLike) => {

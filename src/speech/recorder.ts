@@ -7,7 +7,8 @@
  * reference audio or a coffee break.
  */
 
-export const RECORD_LEAD_MS = 200;
+/** 200 ms before the earliest moment speech counts for the phrase (see EARLY_START_MS). */
+export const RECORD_LEAD_MS = 200 + 600;
 export const RECORD_TAIL_MS = 300;
 export const RECORD_BITRATE = 32_000;
 

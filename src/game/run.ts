@@ -8,6 +8,7 @@ import { matchPhrase } from '../engine/normalize';
 import { ScoreState, classify, type ScoreUpdate } from '../engine/scoring';
 import type { Outcome, Phrase } from '../engine/types';
 import {
+  EARLY_START_MS,
   GAP_BETWEEN_PHRASES_MS,
   LATE_GRACE_MS,
   RECOGNITION_LATENCY_MS,
@@ -158,7 +159,8 @@ export class Run {
 
   private evaluate(p: ActivePhrase, nowMs: number): void {
     if (p.state !== 'inZone' && p.state !== 'grace') return;
-    const { enterMs, exitMs } = p.window;
+    const { exitMs } = p.window;
+    const enterMs = p.window.enterMs - EARLY_START_MS;
     const graceWords = this.heardBetween(enterMs, exitMs + LATE_GRACE_MS);
     const graceMatch = matchPhrase(p.phrase.text, graceWords.join(' '));
     p.heardText = graceWords.join(' ');
