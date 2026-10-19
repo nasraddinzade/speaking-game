@@ -1,8 +1,10 @@
 /**
  * Mock recognizer for development and automated checks.
  *
- * Words are fed from outside (a dev panel, a test script, or the `speak()`
+ * Words are fed from outside (a dev panel, a test script, or the `hear()`
  * hook on window) and get timestamps like real recognition results would.
+ * The "microphone" for recording is a quiet synthetic tone so MediaRecorder
+ * has something to record.
  */
 import type { Recognizer, RecognizerEvents, RecognizerStatus, TimedWord } from './recognizer';
 
@@ -14,9 +16,28 @@ export interface MockRecognizer extends Recognizer {
 export function createMockRecognizer(events: RecognizerEvents = {}): MockRecognizer {
   let status: RecognizerStatus = 'idle';
   let words: TimedWord[] = [];
+  let synthetic: MediaStream | null = null;
+  let ctx: AudioContext | null = null;
   const setStatus = (s: RecognizerStatus) => {
     status = s;
     events.onStatus?.(s);
+  };
+  const ensureStream = () => {
+    if (synthetic) return synthetic;
+    try {
+      ctx = new AudioContext();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      gain.gain.value = 0.05;
+      osc.frequency.value = 220;
+      const dest = ctx.createMediaStreamDestination();
+      osc.connect(gain).connect(dest);
+      osc.start();
+      synthetic = dest.stream;
+    } catch {
+      synthetic = null;
+    }
+    return synthetic;
   };
   return {
     supported: true,
@@ -24,6 +45,8 @@ export function createMockRecognizer(events: RecognizerEvents = {}): MockRecogni
       return status;
     },
     start() {
+      ensureStream();
+      if (ctx?.state === 'suspended') void ctx.resume();
       setStatus('listening');
     },
     stop() {
@@ -37,6 +60,9 @@ export function createMockRecognizer(events: RecognizerEvents = {}): MockRecogni
     },
     level() {
       return 0;
+    },
+    stream() {
+      return synthetic;
     },
     hear(text, final = true) {
       if (status !== 'listening') return;

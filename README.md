@@ -45,6 +45,25 @@ Chrome itself has working recognition (verified end to end with a WAV file fed i
 
 Keys during a run: `Esc` / `Space` pause and resume, `T` translation (paused), `L` listen (paused).
 
+## Recordings
+
+Every clean hit is recorded (MediaRecorder on the same microphone stream the recognizer uses, `audio/webm;codecs=opus` at 32 kbps, from 200 ms before the phrase enters the zone to 300 ms after it leaves). Misses are not recorded. Each phrase keeps two files in `data/recordings/`:
+
+- `{phraseId}_first.webm`: the very first clean take, never overwritten (the launcher refuses to replace it).
+- `{phraseId}_latest.webm`: the most recent clean take, replaced on every clean hit.
+
+The progress JSON stores only file names and dates under `recordings`. When moving progress to another machine, copy the recordings folder too; without it the app works, playback just reports that the file is missing.
+
+Where to listen:
+
+- Results screen: every phrase of the run that has both takes gets First / Now / Reference buttons. Nothing autoplays; the active button is highlighted while the sound plays.
+- When a phrase becomes learned (clean hits on 3 different days), a comparison screen opens right after the run, before the results: first take, latest take, days between them.
+- Home, "My recordings": all phrases with a pair, newest first.
+
+If the folder grows past 500 MB the home screen shows a warning with a button that deletes the recordings of learned phrases older than six months. Nothing is deleted automatically.
+
+The run pauses by itself while the window is hidden or covered (Chromium stops animation frames there) and resumes when it is visible again.
+
 ## Progress
 
 A phrase is learned after clean hits on 3 different calendar days (several hits on the same day count once). A word miss adds to `misses` and makes the phrase come back more often; silence only costs points. Learned phrases leave the rotation and come back for a check after 14 days.
@@ -66,4 +85,6 @@ npm run build      # production build into dist/
 
 Open the game with `?mock=1` to replace the microphone with a dev panel where you type what you would have said. `window.__game` exposes the current run, `hear(text)` and `start(settings)` for scripted checks.
 
-Layout: `src/engine` (pure logic: normalization, zone math, scoring, progress), `src/speech` (Web Speech wrapper, TTS, mock), `src/game` (run timeline, clock, effects, run screen), `src/screens` (home, results), `src/storage` (progress file API), `launcher/` (server + browser window).
+Layout: `src/engine` (pure logic: normalization, zone math, scoring, progress), `src/speech` (Web Speech wrapper, recorder, TTS, mock), `src/game` (run timeline, clock, effects, player, run screen), `src/screens` (home, results, comparison, recordings list), `src/storage` (progress file and recordings API), `launcher/` (server + browser window).
+
+In mock mode the microphone is a quiet synthetic tone, so recordings and the comparison screen can be exercised without a real microphone.

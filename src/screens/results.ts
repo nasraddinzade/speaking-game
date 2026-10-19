@@ -1,5 +1,8 @@
-import type { RunSummary } from '../engine/types';
-import { speak } from '../speech/tts';
+import { hasComparison } from '../engine/progress';
+import type { PhraseProgress, RunSummary } from '../engine/types';
+import { attachPlayButton, playTts, stopPlayback } from '../game/player';
+import type { RecordingsApi } from '../storage/storage';
+import { buildRecordingButtons } from './recording-buttons';
 
 export interface ResultsOptions {
   root: HTMLElement;
@@ -7,6 +10,10 @@ export interface ResultsOptions {
   newBestScore: boolean;
   newBestCombo: boolean;
   voiceName: string | null;
+  records: Record<string, PhraseProgress>;
+  recordings: RecordingsApi | null;
+  today: string;
+  onError: (message: string) => void;
   onPlayAgain: () => void;
   onHome: () => void;
 }
@@ -14,6 +21,12 @@ export interface ResultsOptions {
 export function mountResults(o: ResultsOptions): void {
   const s = o.summary;
   const stumbles = s.entries.filter((e) => e.outcome !== 'clean');
+  const seen = new Set<string>();
+  const withRecordings = s.entries.filter((e) => {
+    if (seen.has(e.phrase.id)) return false;
+    seen.add(e.phrase.id);
+    return o.recordings !== null && hasComparison(o.records[e.phrase.id]);
+  });
   o.root.innerHTML = `
     <div class="screen results">
       <p class="big-score"><small>${o.newBestScore ? 'NEW BEST SCORE' : 'SCORE'}</small>${s.score}</p>
@@ -28,29 +41,55 @@ export function mountResults(o: ResultsOptions): void {
         <button class="primary" id="again">PLAY AGAIN</button>
         <button class="ghost" id="home">Home</button>
       </div>
-      <div class="stumbles">
+      <div class="stumbles" id="stumbles">
         <h3>${stumbles.length === 0 ? 'Flawless run. Nothing to review.' : `Where you stumbled (${stumbles.length})`}</h3>
-        ${stumbles
-          .map(
-            (e, i) => `
-          <div class="stumble">
-            <span class="tag ${e.outcome}">${e.outcome.toUpperCase()}</span>
-            <div class="text">${esc(e.phrase.text)}<span class="tr">${esc(e.phrase.translation)}</span>${e.heard ? `<span class="heard">heard: ${esc(e.heard)} (${Math.round(e.matchRatio * 100)}%)</span>` : ''}</div>
-            <button data-i="${i}" class="listen">Listen</button>
-          </div>`,
-          )
-          .join('')}
       </div>
+      <div class="stumbles" id="recordings"></div>
     </div>
   `;
-  o.root.querySelector('#again')!.addEventListener('click', o.onPlayAgain);
-  o.root.querySelector('#home')!.addEventListener('click', o.onHome);
-  o.root.querySelectorAll<HTMLButtonElement>('button.listen').forEach((b) =>
-    b.addEventListener('click', () => {
-      const e = stumbles[Number(b.dataset.i)];
-      if (e) void speak(e.phrase.text, { voiceName: o.voiceName });
-    }),
-  );
+  const stumbleBox = o.root.querySelector<HTMLElement>('#stumbles')!;
+  stumbles.forEach((e) => {
+    const row = document.createElement('div');
+    row.className = 'stumble';
+    row.innerHTML = `
+      <span class="tag ${e.outcome}">${e.outcome.toUpperCase()}</span>
+      <div class="text">${esc(e.phrase.text)}<span class="tr">${esc(e.phrase.translation)}</span>${e.heard ? `<span class="heard">heard: ${esc(e.heard)} (${Math.round(e.matchRatio * 100)}%)</span>` : ''}</div>
+      <button class="listen">Listen</button>`;
+    attachPlayButton(row.querySelector('button.listen')!, () => playTts(e.phrase.text, o.voiceName), o.onError);
+    stumbleBox.appendChild(row);
+  });
+
+  const recBox = o.root.querySelector<HTMLElement>('#recordings')!;
+  if (withRecordings.length > 0 && o.recordings) {
+    const h = document.createElement('h3');
+    h.textContent = `Your recordings (${withRecordings.length})`;
+    recBox.appendChild(h);
+    for (const e of withRecordings) {
+      const row = document.createElement('div');
+      row.className = 'stumble rec-row';
+      row.innerHTML = `<div class="text">${esc(e.phrase.text)}<span class="tr">${esc(e.phrase.translation)}</span></div>`;
+      row.appendChild(
+        buildRecordingButtons({
+          phrase: e.phrase,
+          record: o.records[e.phrase.id],
+          api: o.recordings,
+          voiceName: o.voiceName,
+          today: o.today,
+          onError: o.onError,
+        }),
+      );
+      recBox.appendChild(row);
+    }
+  }
+
+  o.root.querySelector('#again')!.addEventListener('click', () => {
+    stopPlayback();
+    o.onPlayAgain();
+  });
+  o.root.querySelector('#home')!.addEventListener('click', () => {
+    stopPlayback();
+    o.onHome();
+  });
 }
 
 function esc(s: string): string {

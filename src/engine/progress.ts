@@ -1,4 +1,14 @@
-import type { Difficulty, Outcome, Phrase, PhraseProgress, Profile, SaveFile, Settings } from './types';
+import type {
+  Difficulty,
+  Outcome,
+  Phrase,
+  PhraseProgress,
+  PhraseRecordings,
+  Profile,
+  RecordingRef,
+  SaveFile,
+  Settings,
+} from './types';
 
 export const REQUIRED_DAYS = 3;
 /** Learned phrases come back for a check this many days after they were last seen. */
@@ -34,7 +44,10 @@ export function applyOutcome(
   outcome: Outcome,
   day: string,
 ): PhraseProgress {
-  const r: PhraseProgress = record ? { ...record, cleanHitDays: [...record.cleanHitDays] } : newRecord(phraseId);
+  const r: PhraseProgress = record
+    ? { ...record, cleanHitDays: [...record.cleanHitDays], recordings: record.recordings ? { ...record.recordings } : undefined }
+    : newRecord(phraseId);
+  if (!r.recordings) delete r.recordings;
   r.lastSeen = day;
   if (outcome === 'clean') {
     if (!r.cleanHitDays.includes(day)) r.cleanHitDays.push(day);
@@ -154,6 +167,8 @@ export function normalizeSave(raw: unknown): SaveFile {
         misses: typeof r.misses === 'number' ? r.misses : 0,
         learned: Boolean(r.learned),
       };
+      const recs = normalizeRecordings(r.recordings);
+      if (recs) phrases[id].recordings = recs;
     }
   }
   return {
@@ -167,6 +182,33 @@ export function normalizeSave(raw: unknown): SaveFile {
     },
     settings: { ...base.settings, ...(obj.settings ?? {}) },
   };
+}
+
+function normalizeRecordings(raw: unknown): PhraseRecordings | undefined {
+  if (!raw || typeof raw !== 'object') return undefined;
+  const out: PhraseRecordings = {};
+  for (const key of ['first', 'latest'] as const) {
+    const ref = (raw as Record<string, unknown>)[key];
+    if (ref && typeof ref === 'object') {
+      const { file, date } = ref as Partial<RecordingRef>;
+      if (typeof file === 'string' && /^[A-Za-z0-9_-]+\.webm$/.test(file) && typeof date === 'string') out[key] = { file, date };
+    }
+  }
+  return out.first || out.latest ? out : undefined;
+}
+
+/** True when the phrase has two different recordings to compare. */
+export function hasComparison(record: PhraseProgress | undefined): boolean {
+  const r = record?.recordings;
+  return Boolean(r?.first && r?.latest && r.first.file !== r.latest.file);
+}
+
+/** "today", "yesterday", "N days ago" for a day relative to today. */
+export function relativeDayLabel(day: string, today: string): string {
+  const n = daysBetween(day, today);
+  if (n <= 0) return 'today';
+  if (n === 1) return 'yesterday';
+  return `${n} days ago`;
 }
 
 export function learnedCount(save: SaveFile): number {

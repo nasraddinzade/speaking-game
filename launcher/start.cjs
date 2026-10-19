@@ -3,7 +3,8 @@
  * Speaking Game launcher.
  *
  * 1. Serves the built game (dist/) on a local port.
- * 2. Keeps progress in data/progress.json through a tiny HTTP API.
+ * 2. Keeps progress in data/progress.json and recordings in data/recordings/
+ *    through a tiny HTTP API.
  * 3. Opens Chrome (or Edge) in app mode: a plain window, no tabs, no address bar.
  *    Google's speech engine behind the Web Speech API works in Chrome. Electron
  *    and other embedded Chromium builds answer "network"; Edge did too when tested.
@@ -50,13 +51,108 @@ function ensureBuild() {
   }
 }
 
-function readBody(req) {
+function readBodyBuffer(req, limit = 50 * 1024 * 1024) {
   return new Promise((resolve, reject) => {
     const chunks = [];
-    req.on('data', (c) => chunks.push(c));
-    req.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
+    let size = 0;
+    req.on('data', (c) => {
+      size += c.length;
+      if (size > limit) {
+        reject(new Error('body too large'));
+        req.destroy();
+        return;
+      }
+      chunks.push(c);
+    });
+    req.on('end', () => resolve(Buffer.concat(chunks)));
     req.on('error', reject);
   });
+}
+
+function readBody(req) {
+  return readBodyBuffer(req).then((b) => b.toString('utf8'));
+}
+
+const RECORDINGS_DIR = path.join(DATA_DIR, 'recordings');
+const RECORDING_NAME = /^[A-Za-z0-9_-]+\.webm$/;
+
+function listRecordings() {
+  if (!fs.existsSync(RECORDINGS_DIR)) return { files: [], totalBytes: 0, dir: RECORDINGS_DIR };
+  const files = [];
+  let totalBytes = 0;
+  for (const name of fs.readdirSync(RECORDINGS_DIR)) {
+    if (!RECORDING_NAME.test(name)) continue;
+    const st = fs.statSync(path.join(RECORDINGS_DIR, name));
+    if (!st.isFile()) continue;
+    files.push({ name, size: st.size, mtime: st.mtime.toISOString() });
+    totalBytes += st.size;
+  }
+  return { files, totalBytes, dir: RECORDINGS_DIR };
+}
+
+async function handleRecordings(req, res, url) {
+  const rest = url.pathname.slice('/api/recordings'.length);
+  if (rest === '' || rest === '/') {
+    if (req.method !== 'GET') {
+      res.writeHead(405);
+      res.end();
+      return;
+    }
+    res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' });
+    res.end(JSON.stringify(listRecordings()));
+    return;
+  }
+  const name = decodeURIComponent(rest.slice(1));
+  if (!RECORDING_NAME.test(name)) {
+    res.writeHead(400, { 'content-type': 'application/json' });
+    res.end('{"error":"bad recording name"}');
+    return;
+  }
+  const file = path.join(RECORDINGS_DIR, name);
+  if (req.method === 'HEAD' || req.method === 'GET') {
+    if (!fs.existsSync(file)) {
+      res.writeHead(404);
+      res.end();
+      return;
+    }
+    const st = fs.statSync(file);
+    res.writeHead(200, { 'content-type': 'audio/webm', 'content-length': st.size, 'cache-control': 'no-store' });
+    if (req.method === 'HEAD') res.end();
+    else fs.createReadStream(file).pipe(res);
+    return;
+  }
+  if (req.method === 'PUT') {
+    const overwrite = url.searchParams.get('overwrite') === '1';
+    const existed = fs.existsSync(file);
+    if (existed && !overwrite) {
+      // The first recording of a phrase is never replaced.
+      const st = fs.statSync(file);
+      res.writeHead(409, { 'content-type': 'application/json' });
+      res.end(JSON.stringify({ exists: true, mtime: st.mtime.toISOString(), size: st.size }));
+      return;
+    }
+    const body = await readBodyBuffer(req);
+    if (body.length === 0) {
+      res.writeHead(400, { 'content-type': 'application/json' });
+      res.end('{"error":"empty recording"}');
+      return;
+    }
+    fs.mkdirSync(RECORDINGS_DIR, { recursive: true });
+    const tmp = `${file}.tmp`;
+    fs.writeFileSync(tmp, body);
+    fs.renameSync(tmp, file);
+    res.writeHead(existed ? 204 : 201);
+    res.end();
+    return;
+  }
+  if (req.method === 'DELETE') {
+    if (fs.existsSync(file)) fs.unlinkSync(file);
+    res.writeHead(204);
+    res.end();
+    return;
+  }
+  res.writeHead(405);
+  res.end();
 }
 
 function writeAtomic(file, text) {
@@ -69,7 +165,11 @@ function writeAtomic(file, text) {
 async function handleApi(req, res, url) {
   if (url.pathname === '/api/info') {
     res.writeHead(200, { 'content-type': 'application/json' });
-    res.end(JSON.stringify({ progressPath: PROGRESS, version: require(path.join(ROOT, 'package.json')).version }));
+    res.end(JSON.stringify({ progressPath: PROGRESS, recordingsDir: RECORDINGS_DIR, version: require(path.join(ROOT, 'package.json')).version }));
+    return;
+  }
+  if (url.pathname.startsWith('/api/recordings')) {
+    await handleRecordings(req, res, url);
     return;
   }
   if (url.pathname === '/api/progress') {
@@ -192,7 +292,7 @@ async function main() {
     return;
   }
   if (browser.name === 'Edge') {
-    console.warn('Warning: Chrome was not found. Edge was opened instead, but on the test machine Edge's speech service answered "network" and recognition did not work. Install Google Chrome for a reliable microphone.');
+    console.warn("Warning: Chrome was not found. Edge was opened instead, but on the test machine Edge's speech service answered \"network\" and recognition did not work. Install Google Chrome for a reliable microphone.");
   }
   console.log(`Opening ${browser.name}...`);
   const child = spawn(

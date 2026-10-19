@@ -42,6 +42,8 @@ export interface Recognizer {
   reset(): void;
   /** Microphone input level 0..1 (0 when unknown). */
   level(): number;
+  /** The microphone stream opened for this run, for recording. Null until the mic is open. */
+  stream(): MediaStream | null;
 }
 
 type SpeechRecognitionCtor = new () => SpeechRecognitionLike;
@@ -283,6 +285,9 @@ export function createWebSpeechRecognizer(events: RecognizerEvents = {}): Recogn
       let sum = 0;
       for (let i = 0; i < levelBuf.length; i++) sum += levelBuf[i] * levelBuf[i];
       return Math.min(1, Math.sqrt(sum / levelBuf.length) * 4);
+    },
+    stream() {
+      return liveTrack() ? stream : null;
     },
   };
 }

@@ -13,6 +13,11 @@ export interface HomeOptions {
   onExport: () => void;
   onImport: (file: File) => void;
   onReset: () => void;
+  /** How many phrases have a pair of recordings to listen to. */
+  recordingPairs: number;
+  onRecordings: () => void;
+  /** Shown when the recordings folder is too large. */
+  storageWarning: { totalMB: number; candidateFiles: number; onCleanup: () => void } | null;
 }
 
 const RUN_LENGTHS = [5, 10, 15, 20, 30];
@@ -57,7 +62,13 @@ export function mountHome(o: HomeOptions): void {
       <div class="hint" id="level-hint">${LEVEL_HINT[s.startLevel - 1]}</div>
       <button class="primary" id="play">PLAY</button>
       <div class="mic-note ${o.micStatus.ok ? 'good' : 'bad'}">${esc(o.micStatus.text)}</div>
+      ${
+        o.storageWarning
+          ? `<div class="warning">Recordings take ${o.storageWarning.totalMB} MB. ${o.storageWarning.candidateFiles > 0 ? `<button id="cleanup">Delete ${o.storageWarning.candidateFiles} recordings of learned phrases older than six months</button>` : 'No recordings of learned phrases older than six months to delete yet.'}</div>`
+          : ''
+      }
       <div class="row">
+        <button class="ghost" id="recordings">My recordings (${o.recordingPairs})</button>
         <button class="ghost" id="export">Export progress</button>
         <button class="ghost" id="import">Import progress</button>
         <button class="ghost" id="reset">Reset progress</button>
@@ -95,6 +106,10 @@ export function mountHome(o: HomeOptions): void {
   });
   o.root.querySelector('#play')!.addEventListener('click', () => o.onPlay({ ...s }));
   o.root.querySelector('#export')!.addEventListener('click', o.onExport);
+  o.root.querySelector('#recordings')!.addEventListener('click', o.onRecordings);
+  o.root.querySelector('#cleanup')?.addEventListener('click', () => {
+    if (confirm('Delete the recordings of learned phrases older than six months? This cannot be undone.')) o.storageWarning?.onCleanup();
+  });
   const fileInput = o.root.querySelector<HTMLInputElement>('#import-file')!;
   o.root.querySelector('#import')!.addEventListener('click', () => fileInput.click());
   fileInput.addEventListener('change', () => {

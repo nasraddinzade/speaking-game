@@ -7,6 +7,7 @@ import { fallSpeedForRun, type FieldLayout } from '../engine/zone';
 import type { Recognizer } from '../speech/recognizer';
 import type { MockRecognizer } from '../speech/mock';
 import { speak, stopSpeaking } from '../speech/tts';
+import { RECORD_LEAD_MS, RECORD_TAIL_MS, startRecording, type PhraseRecording } from '../speech/recorder';
 import { confetti, sfx } from './fx';
 import { Run, type ActivePhrase } from './run';
 
@@ -19,6 +20,10 @@ export interface GameScreenOptions {
   onOutcome: (entry: RunResultEntry) => void;
   onFinished: (summary: RunSummary) => void;
   onQuit: () => void;
+  /** Microphone stream for recording; polled when a recording should start. */
+  getStream?: () => MediaStream | null;
+  /** Audio of a clean hit, called after onOutcome for that phrase. */
+  onRecording?: (phrase: Phrase, blob: Blob) => void;
 }
 
 const PREFERRED_FALL_SPEED = 110;
@@ -108,6 +113,17 @@ export function mountGameScreen(opts: GameScreenOptions): GameHandle {
   let pausedByUser = false;
   let autoPausing = false;
   let translationShown = false;
+  /** Recorder per phrase index, started a little before the zone and stopped a little after. */
+  const recordings = new Map<number, PhraseRecording>();
+  const recordingDone = new Set<number>();
+
+  function pauseRecorders(paused: boolean): void {
+    for (const r of recordings.values()) {
+      if (!r.active) continue;
+      if (paused) r.pause();
+      else r.resume();
+    }
+  }
 
   const run = new Run(
     { phrases, layout, fallSpeed, heights },
@@ -165,6 +181,12 @@ export function mountGameScreen(opts: GameScreenOptions): GameHandle {
         };
         entries.push(entry);
         opts.onOutcome(entry);
+        const rec = recordings.get(p.index);
+        if (rec && opts.onRecording && update.outcome === 'clean') {
+          void rec.blob.then((blob) => {
+            if (blob) opts.onRecording?.(p.phrase, blob);
+          });
+        }
         updateZone();
         if (update.outcome === 'miss' || update.outcome === 'silence') void playReferenceAfterMiss(p);
       },
@@ -234,19 +256,52 @@ export function mountGameScreen(opts: GameScreenOptions): GameHandle {
     if (disposed) return;
     autoPausing = true;
     run.pause();
+    pauseRecorders(true);
     listeningText.textContent = p.phrase.text;
     listeningOverlay.classList.remove('hidden');
     await speak(p.phrase.text, { voiceName: settings.voiceName });
     await new Promise((r) => setTimeout(r, 350));
     listeningOverlay.classList.add('hidden');
     autoPausing = false;
-    if (!disposed && !pausedByUser) run.resume();
+    if (!disposed && !pausedByUser) {
+      run.resume();
+      pauseRecorders(false);
+    }
   }
 
   let lastMicStatus = '';
   function frame(): void {
     if (disposed) return;
+    try {
+      step();
+    } catch (e) {
+      console.error('game loop error', e);
+    }
+    rafId = requestAnimationFrame(frame);
+  }
+
+  /** One simulation step. Runs from requestAnimationFrame and, as a fallback, from a timer:
+   *  Chromium stops animation frames for a hidden or covered window, and the run must still
+   *  stop its recorders and finish cleanly. */
+  function step(): void {
     run.tick();
+    const nowMs = run.clock.now();
+    for (const p of run.active) {
+      const w = p.window;
+      if (!recordings.has(p.index) && !recordingDone.has(p.index) && nowMs >= w.enterMs - RECORD_LEAD_MS && nowMs < w.exitMs) {
+        const stream = opts.getStream?.();
+        if (stream) {
+          const r = startRecording(stream);
+          if (r) recordings.set(p.index, r);
+          else recordingDone.add(p.index);
+        }
+      }
+      const r = recordings.get(p.index);
+      if (r && r.active && !recordingDone.has(p.index) && nowMs >= w.exitMs + RECORD_TAIL_MS) {
+        r.stop();
+        recordingDone.add(p.index);
+      }
+    }
     const inZone = run.active.some((p) => p.state === 'inZone');
     const micKey = `${recognizer.status}:${inZone}`;
     if (micKey !== lastMicStatus) {
@@ -261,8 +316,20 @@ export function mountGameScreen(opts: GameScreenOptions): GameHandle {
       const el = els.get(p.index);
       if (el) el.style.top = `${run.topOf(p, now)}px`;
     }
-    rafId = requestAnimationFrame(frame);
   }
+
+  /** The player cannot see the phrases while the window is hidden or covered: pause there, resume when it is back. */
+  let pausedByVisibility = false;
+  const onVisibility = () => {
+    if (run.isFinished || autoPausing) return;
+    if (document.hidden && !pausedByUser) {
+      togglePause();
+      pausedByVisibility = true;
+    } else if (!document.hidden && pausedByVisibility) {
+      pausedByVisibility = false;
+      if (pausedByUser) togglePause();
+    }
+  };
 
   function togglePause(): void {
     if (disposed || run.isFinished || autoPausing) return;
@@ -271,9 +338,11 @@ export function mountGameScreen(opts: GameScreenOptions): GameHandle {
       stopSpeaking();
       pauseOverlay.classList.add('hidden');
       run.resume();
+      pauseRecorders(false);
     } else {
       pausedByUser = true;
       run.pause();
+      pauseRecorders(true);
       const cur = run.current() ?? run.all[Math.min(run.all.length - 1, Math.max(0, entries.length))];
       pausePhrase.textContent = cur?.phrase.text ?? '';
       pausePhrase.dataset.translation = cur?.phrase.translation ?? '';
@@ -346,6 +415,15 @@ export function mountGameScreen(opts: GameScreenOptions): GameHandle {
     renderTranslation();
   });
   window.addEventListener('keydown', onKey);
+  document.addEventListener('visibilitychange', onVisibility);
+  const fallbackTimer = window.setInterval(() => {
+    if (disposed) return;
+    try {
+      step();
+    } catch (e) {
+      console.error('game loop error', e);
+    }
+  }, 250);
 
   if (opts.mock) {
     const input = root.querySelector<HTMLInputElement>('#dev-say')!;
@@ -372,8 +450,11 @@ export function mountGameScreen(opts: GameScreenOptions): GameHandle {
       if (disposed) return;
       disposed = true;
       cancelAnimationFrame(rafId);
+      clearInterval(fallbackTimer);
       window.removeEventListener('keydown', onKey);
+      document.removeEventListener('visibilitychange', onVisibility);
       stopSpeaking();
+      for (const r of recordings.values()) r.stop();
     },
   };
   return handle;

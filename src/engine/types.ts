@@ -13,8 +13,22 @@ export interface Phrase {
 /** Four outcomes, deliberately not three: a word miss and silence are different situations. */
 export type Outcome = 'clean' | 'late' | 'miss' | 'silence';
 
+export interface RecordingRef {
+  /** File name inside the recordings folder, e.g. p_0142_first.webm */
+  file: string;
+  /** Local day (YYYY-MM-DD) the recording was made. */
+  date: string;
+}
+
+/** Two recordings per phrase: the very first clean hit (never overwritten) and the latest one. */
+export interface PhraseRecordings {
+  first?: RecordingRef;
+  latest?: RecordingRef;
+}
+
 export interface PhraseProgress {
   phraseId: string;
+  recordings?: PhraseRecordings;
   /** Local calendar days (YYYY-MM-DD) with at least one clean hit. Same-day hits count once. */
   cleanHitDays: string[];
   requiredDays: number;
