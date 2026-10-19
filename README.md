@@ -15,7 +15,15 @@ npm install
 npm start
 ```
 
-`npm start` builds the game once, starts a tiny local server and opens Chrome in app mode: a plain window without tabs or address bar. Closing the window stops the server. Double-clicking `Speaking Game.cmd` does the same.
+`npm start` builds the game once, starts a tiny local server and opens Chrome in app mode: a plain window without tabs or address bar. Closing the window stops the server.
+
+For a desktop icon that starts everything (server and game window) with one double-click:
+
+```bash
+npm run shortcut
+```
+
+This puts `Speaking Game.lnk` on the desktop (`--dir <folder>` for another place). It runs `launcher/start-hidden.vbs`: no console window, the server stays hidden and exits when the game window closes. On the first launch it runs `npm install` and the build in a visible window. Double-clicking `Speaking Game.cmd` in the project folder does the same without a shortcut.
 
 On the first run the browser asks for microphone access. Allow it once; the game keeps its own browser profile under `data/browser-profile`, so the choice is remembered.
 

@@ -11,7 +11,8 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "start": "node launcher/start.cjs",
-    "serve": "node launcher/start.cjs --no-browser"
+    "serve": "node launcher/start.cjs --no-browser",
+    "shortcut": "node launcher/make-shortcut.cjs"
   },
   "devDependencies": {
     "typescript": "^7.0.2",
