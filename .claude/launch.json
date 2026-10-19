@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "game",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["launcher/start.cjs", "--no-browser", "--port", "7345"],
+      "port": 7345
+    }
+  ]
+}

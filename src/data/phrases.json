@@ -1,0 +1,2162 @@
+[
+  {
+    "id": "p_0001",
+    "text": "Moving on.",
+    "translation": "Идём дальше.",
+    "wordCount": 2,
+    "difficulty": 1,
+    "category": "transitions",
+    "tags": ["connector"]
+  },
+  {
+    "id": "p_0002",
+    "text": "On the other hand.",
+    "translation": "С другой стороны.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "transitions",
+    "tags": ["connector"]
+  },
+  {
+    "id": "p_0003",
+    "text": "As I said before.",
+    "translation": "Как я уже говорил.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "transitions",
+    "tags": ["connector"]
+  },
+  {
+    "id": "p_0004",
+    "text": "First of all, thanks.",
+    "translation": "Прежде всего, спасибо.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "transitions",
+    "tags": ["linking", "connector"]
+  },
+  {
+    "id": "p_0005",
+    "text": "Okay, so basically.",
+    "translation": "Ну, в общем.",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "transitions",
+    "tags": ["filler", "connector"]
+  },
+  {
+    "id": "p_0006",
+    "text": "Long story short, no.",
+    "translation": "Короче говоря, нет.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "transitions",
+    "tags": ["connector"]
+  },
+  {
+    "id": "p_0007",
+    "text": "Let me explain.",
+    "translation": "Позволь объяснить.",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "transitions",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0008",
+    "text": "Let me check.",
+    "translation": "Сейчас проверю.",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "work",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0009",
+    "text": "Got a minute?",
+    "translation": "Есть минутка?",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "work",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0010",
+    "text": "Can you hear me?",
+    "translation": "Вы меня слышите?",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "work",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0011",
+    "text": "Any questions so far?",
+    "translation": "Пока есть вопросы?",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "work",
+    "tags": ["question"]
+  },
+  {
+    "id": "p_0012",
+    "text": "Just checking in.",
+    "translation": "Просто хотел узнать, как дела.",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "work",
+    "tags": []
+  },
+  {
+    "id": "p_0013",
+    "text": "We can circle back later.",
+    "translation": "Вернёмся к этому позже.",
+    "wordCount": 5,
+    "difficulty": 1,
+    "category": "work",
+    "tags": []
+  },
+  {
+    "id": "p_0014",
+    "text": "Quick question for you.",
+    "translation": "У меня к тебе быстрый вопрос.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "work",
+    "tags": []
+  },
+  {
+    "id": "p_0015",
+    "text": "Let me know.",
+    "translation": "Дай знать.",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "work",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0016",
+    "text": "Fair enough.",
+    "translation": "Ладно, справедливо.",
+    "wordCount": 2,
+    "difficulty": 1,
+    "category": "disagreement",
+    "tags": []
+  },
+  {
+    "id": "p_0017",
+    "text": "Not exactly.",
+    "translation": "Не совсем.",
+    "wordCount": 2,
+    "difficulty": 1,
+    "category": "disagreement",
+    "tags": []
+  },
+  {
+    "id": "p_0018",
+    "text": "Hear me out.",
+    "translation": "Выслушай меня.",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "disagreement",
+    "tags": []
+  },
+  {
+    "id": "p_0019",
+    "text": "Wait a minute.",
+    "translation": "Погоди-ка.",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "disagreement",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0020",
+    "text": "Let me finish.",
+    "translation": "Дай мне договорить.",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "disagreement",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0021",
+    "text": "Not sure about that.",
+    "translation": "Я в этом не уверен.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "disagreement",
+    "tags": []
+  },
+  {
+    "id": "p_0022",
+    "text": "Kind of.",
+    "translation": "Типа того.",
+    "wordCount": 2,
+    "difficulty": 1,
+    "category": "casual",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0023",
+    "text": "Sort of.",
+    "translation": "Вроде того.",
+    "wordCount": 2,
+    "difficulty": 1,
+    "category": "casual",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0024",
+    "text": "Give it a shot.",
+    "translation": "Попробуй.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "casual",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0025",
+    "text": "I have no idea.",
+    "translation": "Понятия не имею.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "casual",
+    "tags": []
+  },
+  {
+    "id": "p_0026",
+    "text": "It is what it is.",
+    "translation": "Что есть, то есть.",
+    "wordCount": 5,
+    "difficulty": 1,
+    "category": "casual",
+    "tags": []
+  },
+  {
+    "id": "p_0027",
+    "text": "Gotta go.",
+    "translation": "Мне пора.",
+    "wordCount": 2,
+    "difficulty": 1,
+    "category": "casual",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0028",
+    "text": "You gotta see this.",
+    "translation": "Ты должен это увидеть.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "casual",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0029",
+    "text": "Out of curiosity, why?",
+    "translation": "Из любопытства: почему?",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "casual",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0030",
+    "text": "How are you doing?",
+    "translation": "Как дела?",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "smalltalk",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0031",
+    "text": "How was your weekend?",
+    "translation": "Как прошли выходные?",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "smalltalk",
+    "tags": ["question"]
+  },
+  {
+    "id": "p_0032",
+    "text": "Nice to meet you.",
+    "translation": "Приятно познакомиться.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "smalltalk",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0033",
+    "text": "See you later.",
+    "translation": "Увидимся позже.",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "smalltalk",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0034",
+    "text": "Good to see you.",
+    "translation": "Рад тебя видеть.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "smalltalk",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0035",
+    "text": "Long time no see.",
+    "translation": "Сто лет не виделись.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "smalltalk",
+    "tags": []
+  },
+  {
+    "id": "p_0036",
+    "text": "Have a good one.",
+    "translation": "Хорошего тебе дня.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "smalltalk",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0037",
+    "text": "Wanna grab lunch?",
+    "translation": "Пойдём пообедаем?",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "smalltalk",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0038",
+    "text": "Could you repeat that?",
+    "translation": "Можете повторить?",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0039",
+    "text": "Take your time.",
+    "translation": "Не торопись.",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "requests",
+    "tags": []
+  },
+  {
+    "id": "p_0040",
+    "text": "Gimme a minute.",
+    "translation": "Дай мне минутку.",
+    "wordCount": 3,
+    "difficulty": 1,
+    "category": "requests",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0041",
+    "text": "Please call me back.",
+    "translation": "Перезвони мне, пожалуйста.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "requests",
+    "tags": []
+  },
+  {
+    "id": "p_0042",
+    "text": "Could you help me?",
+    "translation": "Не поможете мне?",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0043",
+    "text": "Lemme think about it.",
+    "translation": "Дай-ка я подумаю.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "requests",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0044",
+    "text": "Do you want some coffee?",
+    "translation": "Хочешь кофе?",
+    "wordCount": 5,
+    "difficulty": 1,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0045",
+    "text": "What do you think?",
+    "translation": "Что ты об этом думаешь?",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "opinion",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0046",
+    "text": "Good point.",
+    "translation": "Хорошее замечание.",
+    "wordCount": 2,
+    "difficulty": 1,
+    "category": "opinion",
+    "tags": []
+  },
+  {
+    "id": "p_0047",
+    "text": "Makes sense.",
+    "translation": "Логично.",
+    "wordCount": 2,
+    "difficulty": 1,
+    "category": "opinion",
+    "tags": []
+  },
+  {
+    "id": "p_0048",
+    "text": "It depends.",
+    "translation": "Всё зависит от обстоятельств.",
+    "wordCount": 2,
+    "difficulty": 1,
+    "category": "opinion",
+    "tags": []
+  },
+  {
+    "id": "p_0049",
+    "text": "Sounds like a plan.",
+    "translation": "Звучит как план.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "opinion",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0050",
+    "text": "I see your point.",
+    "translation": "Понимаю, о чём ты.",
+    "wordCount": 4,
+    "difficulty": 1,
+    "category": "opinion",
+    "tags": []
+  },
+  {
+    "id": "p_0051",
+    "text": "Here's the thing about that.",
+    "translation": "Вот в чём дело.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "transitions",
+    "tags": ["contraction", "connector"]
+  },
+  {
+    "id": "p_0052",
+    "text": "Let's get back to the topic.",
+    "translation": "Давайте вернёмся к теме.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "transitions",
+    "tags": ["contraction", "connector"]
+  },
+  {
+    "id": "p_0053",
+    "text": "That's not what I meant.",
+    "translation": "Я не это имел в виду.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "transitions",
+    "tags": ["contraction", "connector"]
+  },
+  {
+    "id": "p_0054",
+    "text": "Anyway, that's all for now.",
+    "translation": "Ладно, на сегодня всё.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "transitions",
+    "tags": ["contraction", "connector"]
+  },
+  {
+    "id": "p_0055",
+    "text": "Let's move on to the next one.",
+    "translation": "Давайте перейдём к следующему.",
+    "wordCount": 7,
+    "difficulty": 2,
+    "category": "transitions",
+    "tags": ["contraction", "connector"]
+  },
+  {
+    "id": "p_0056",
+    "text": "So, what's the next step?",
+    "translation": "Итак, какой следующий шаг?",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "transitions",
+    "tags": ["contraction", "connector", "question"]
+  },
+  {
+    "id": "p_0057",
+    "text": "Okay, here's what I think.",
+    "translation": "Окей, вот что я думаю.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "transitions",
+    "tags": ["contraction", "filler", "connector"]
+  },
+  {
+    "id": "p_0058",
+    "text": "And that's why I asked.",
+    "translation": "Вот поэтому я и спросил.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "transitions",
+    "tags": ["contraction", "connector"]
+  },
+  {
+    "id": "p_0059",
+    "text": "I'll get back to you on that.",
+    "translation": "Я к этому ещё вернусь.",
+    "wordCount": 7,
+    "difficulty": 2,
+    "category": "work",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0060",
+    "text": "Can we park that for now?",
+    "translation": "Можем пока отложить это?",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "work",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0061",
+    "text": "Let's take this offline for now.",
+    "translation": "Давайте пока обсудим это отдельно.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "work",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0062",
+    "text": "I'm not sure I follow.",
+    "translation": "Не уверен, что я понимаю.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "work",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0063",
+    "text": "Let me make sure I've got this.",
+    "translation": "Дай убедиться, что я всё правильно понял.",
+    "wordCount": 7,
+    "difficulty": 2,
+    "category": "work",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0064",
+    "text": "I'll need a couple more days.",
+    "translation": "Мне понадобится ещё пара дней.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "work",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0065",
+    "text": "I can't see your screen.",
+    "translation": "Я не вижу ваш экран.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "work",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0066",
+    "text": "You're on mute, I think.",
+    "translation": "Кажется, у вас выключен микрофон.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "work",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0067",
+    "text": "We're running out of time.",
+    "translation": "У нас заканчивается время.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "work",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0068",
+    "text": "I'll shoot you an email later.",
+    "translation": "Я черкну тебе письмо позже.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "work",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0069",
+    "text": "Let's put it on the agenda.",
+    "translation": "Давайте внесём это в повестку.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "work",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0070",
+    "text": "I'm not sure that follows.",
+    "translation": "Не уверен, что это следует из сказанного.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "disagreement",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0071",
+    "text": "I'd push back on that a little.",
+    "translation": "Я бы немного с этим поспорил.",
+    "wordCount": 7,
+    "difficulty": 2,
+    "category": "disagreement",
+    "tags": ["contraction", "reduction"]
+  },
+  {
+    "id": "p_0072",
+    "text": "That's one way to look at it.",
+    "translation": "Это один из взглядов на вещи.",
+    "wordCount": 7,
+    "difficulty": 2,
+    "category": "disagreement",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0073",
+    "text": "I don't really see it that way.",
+    "translation": "Я вижу это немного иначе.",
+    "wordCount": 7,
+    "difficulty": 2,
+    "category": "disagreement",
+    "tags": ["contraction", "reduction"]
+  },
+  {
+    "id": "p_0074",
+    "text": "Hmm, that's not quite right.",
+    "translation": "Хм, это не совсем так.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "disagreement",
+    "tags": ["contraction", "filler"]
+  },
+  {
+    "id": "p_0075",
+    "text": "I wouldn't say that, exactly.",
+    "translation": "Я бы не сказал, что именно так.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "disagreement",
+    "tags": ["contraction", "reduction"]
+  },
+  {
+    "id": "p_0076",
+    "text": "Yeah, but that's not the point.",
+    "translation": "Да, но дело не в этом.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "disagreement",
+    "tags": ["contraction", "connector"]
+  },
+  {
+    "id": "p_0077",
+    "text": "I'm not totally convinced yet.",
+    "translation": "Меня пока не до конца убедили.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "disagreement",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0078",
+    "text": "That doesn't really add up.",
+    "translation": "Это как-то не сходится.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "disagreement",
+    "tags": ["contraction", "reduction"]
+  },
+  {
+    "id": "p_0079",
+    "text": "We'll have to agree to disagree.",
+    "translation": "Придётся остаться при своём мнении.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "disagreement",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0080",
+    "text": "I'm so over this weather.",
+    "translation": "Мне эта погода уже надоела.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "casual",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0081",
+    "text": "That's pretty much it, yeah.",
+    "translation": "В целом, вот и всё.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "casual",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0082",
+    "text": "I'm kinda tired today, honestly.",
+    "translation": "Если честно, я сегодня уставший.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "casual",
+    "tags": ["contraction", "linking", "filler"]
+  },
+  {
+    "id": "p_0083",
+    "text": "It's not a big deal.",
+    "translation": "Ничего страшного.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "casual",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0084",
+    "text": "I'm not really into it.",
+    "translation": "Меня это не особо цепляет.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "casual",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0085",
+    "text": "That's kinda awkward, you know?",
+    "translation": "Это как-то неловко, понимаешь?",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "casual",
+    "tags": ["contraction", "linking", "question"]
+  },
+  {
+    "id": "p_0086",
+    "text": "Don't worry about it at all.",
+    "translation": "Да не переживай об этом.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "casual",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0087",
+    "text": "I'm gonna be late, sorry.",
+    "translation": "Я опоздаю, извини.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "casual",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0088",
+    "text": "I'm gonna grab a coffee, want anything?",
+    "translation": "Пойду возьму кофе, тебе что-нибудь взять?",
+    "wordCount": 7,
+    "difficulty": 2,
+    "category": "casual",
+    "tags": ["contraction", "linking", "question"]
+  },
+  {
+    "id": "p_0089",
+    "text": "Let's just wing it, then.",
+    "translation": "Давай просто сымпровизируем.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "casual",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0090",
+    "text": "How's it going over there?",
+    "translation": "Как у вас там дела?",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "smalltalk",
+    "tags": ["contraction", "question"]
+  },
+  {
+    "id": "p_0091",
+    "text": "So, what's new with you?",
+    "translation": "Ну, что нового у тебя?",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "smalltalk",
+    "tags": ["contraction", "filler", "question"]
+  },
+  {
+    "id": "p_0092",
+    "text": "I'm doing pretty well, thanks.",
+    "translation": "У меня всё хорошо, спасибо.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "smalltalk",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0093",
+    "text": "How's your week been so far?",
+    "translation": "Как у тебя проходит неделя?",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "smalltalk",
+    "tags": ["contraction", "question"]
+  },
+  {
+    "id": "p_0094",
+    "text": "I haven't seen you in ages.",
+    "translation": "Тебя сто лет не видел.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "smalltalk",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0095",
+    "text": "What's the weather like there?",
+    "translation": "Какая у вас там погода?",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "smalltalk",
+    "tags": ["contraction", "question"]
+  },
+  {
+    "id": "p_0096",
+    "text": "Whatcha doing this weekend, anything planned?",
+    "translation": "Что делаешь на выходных, есть планы?",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "smalltalk",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0097",
+    "text": "I'm kind of a morning person.",
+    "translation": "Я скорее жаворонок.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "smalltalk",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0098",
+    "text": "Let's catch up sometime soon.",
+    "translation": "Давай как-нибудь скоро созвонимся.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "smalltalk",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0099",
+    "text": "Can you cover for me tomorrow?",
+    "translation": "Можешь подменить меня завтра?",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0100",
+    "text": "Could you send me the link?",
+    "translation": "Скинешь мне ссылку?",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0101",
+    "text": "Would you mind closing the door?",
+    "translation": "Не мог бы ты закрыть дверь?",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0102",
+    "text": "Can I borrow your charger for a minute?",
+    "translation": "Можно одолжить твою зарядку на минутку?",
+    "wordCount": 8,
+    "difficulty": 2,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0103",
+    "text": "Could you speak up a little?",
+    "translation": "Можете говорить погромче?",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0104",
+    "text": "Can you walk me through it?",
+    "translation": "Можешь объяснить по шагам?",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0105",
+    "text": "Mind if I jump in here?",
+    "translation": "Не против, если я вставлю слово?",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0106",
+    "text": "Could you turn the volume down?",
+    "translation": "Можешь сделать потише?",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0107",
+    "text": "I wanna hear your thoughts on this.",
+    "translation": "Хочу услышать твоё мнение на этот счёт.",
+    "wordCount": 7,
+    "difficulty": 2,
+    "category": "requests",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0108",
+    "text": "Please let me know by Friday.",
+    "translation": "Пожалуйста, дай знать до пятницы.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "requests",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0109",
+    "text": "Lemme know if you're free later.",
+    "translation": "Дай знать, если освободишься позже.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "requests",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0110",
+    "text": "I think it's a great idea.",
+    "translation": "По-моему, отличная идея.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "opinion",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0111",
+    "text": "Honestly, I'm not a fan.",
+    "translation": "Честно говоря, мне не очень нравится.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "opinion",
+    "tags": ["contraction", "filler"]
+  },
+  {
+    "id": "p_0112",
+    "text": "To me, it's pretty obvious.",
+    "translation": "По-моему, это довольно очевидно.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "opinion",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0113",
+    "text": "I would say it's worth it.",
+    "translation": "Я бы сказал, оно того стоит.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "opinion",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0114",
+    "text": "I feel like we're overthinking this.",
+    "translation": "Мне кажется, мы слишком накручиваем.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "opinion",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0115",
+    "text": "Yeah, it's kinda risky, though.",
+    "translation": "Это всё-таки рискованно.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "opinion",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0116",
+    "text": "I'm gonna be honest with you.",
+    "translation": "Скажу тебе честно.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "opinion",
+    "tags": ["contraction", "linking", "filler"]
+  },
+  {
+    "id": "p_0117",
+    "text": "That's a lot to take in.",
+    "translation": "Это много информации сразу.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "opinion",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0118",
+    "text": "Yeah, I couldn't agree more.",
+    "translation": "Полностью согласен.",
+    "wordCount": 5,
+    "difficulty": 2,
+    "category": "opinion",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0119",
+    "text": "Personally, I'd go with the second one.",
+    "translation": "Лично я бы выбрал второй вариант.",
+    "wordCount": 7,
+    "difficulty": 2,
+    "category": "opinion",
+    "tags": ["contraction"]
+  },
+  {
+    "id": "p_0120",
+    "text": "I'm kind of on the fence.",
+    "translation": "Я пока колеблюсь.",
+    "wordCount": 6,
+    "difficulty": 2,
+    "category": "opinion",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0121",
+    "text": "And that's what brings me to my next point.",
+    "translation": "И это подводит меня к следующему пункту.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "transitions",
+    "tags": ["contraction", "connector"]
+  },
+  {
+    "id": "p_0122",
+    "text": "Let me walk you through how it works.",
+    "translation": "Давай я покажу, как это работает.",
+    "wordCount": 8,
+    "difficulty": 3,
+    "category": "transitions",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0123",
+    "text": "Anyway, where were we before I got sidetracked?",
+    "translation": "Так, на чём мы остановились, пока я не отвлёкся?",
+    "wordCount": 8,
+    "difficulty": 3,
+    "category": "transitions",
+    "tags": ["linking", "connector", "question"]
+  },
+  {
+    "id": "p_0124",
+    "text": "So, to sum up, we're pretty much on track.",
+    "translation": "Итак, подытожим: мы практически в графике.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "transitions",
+    "tags": ["contraction", "reduction", "connector"]
+  },
+  {
+    "id": "p_0125",
+    "text": "Before we dive in, let me give you some context.",
+    "translation": "Прежде чем углубиться, дам немного контекста.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "transitions",
+    "tags": ["linking", "connector"]
+  },
+  {
+    "id": "p_0126",
+    "text": "That said, I think we should look at the numbers.",
+    "translation": "Тем не менее, думаю, надо взглянуть на цифры.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "transitions",
+    "tags": ["reduction", "connector"]
+  },
+  {
+    "id": "p_0127",
+    "text": "Long story short, it didn't work out in the end.",
+    "translation": "Короче, в итоге ничего не вышло.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "transitions",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0128",
+    "text": "Okay, so here's where things get a little tricky.",
+    "translation": "Так, вот тут становится немного сложнее.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "transitions",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0129",
+    "text": "Speaking of which, did you see the email from Dan?",
+    "translation": "Кстати, ты видел письмо от Дэна?",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "transitions",
+    "tags": ["linking", "connector", "question"]
+  },
+  {
+    "id": "p_0130",
+    "text": "I'll have to check with the team and get back to you.",
+    "translation": "Мне надо уточнить у команды и вернуться к вам.",
+    "wordCount": 12,
+    "difficulty": 3,
+    "category": "work",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0131",
+    "text": "Could you give me a quick rundown of where we are?",
+    "translation": "Можешь вкратце рассказать, где мы сейчас?",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "work",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0132",
+    "text": "Let me make sure I understand you correctly.",
+    "translation": "Давайте проверю, правильно ли я вас понял.",
+    "wordCount": 8,
+    "difficulty": 3,
+    "category": "work",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0133",
+    "text": "I'm going to need a bit more time on this.",
+    "translation": "Мне понадобится ещё немного времени на это.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "work",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0134",
+    "text": "We're gonna have to push the deadline back a little.",
+    "translation": "Придётся немного сдвинуть дедлайн.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "work",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0135",
+    "text": "I'll loop in Sarah so she can take a look.",
+    "translation": "Я подключу Сару, чтобы она посмотрела.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "work",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0136",
+    "text": "I just wanted to follow up on what we talked about.",
+    "translation": "Хотел вернуться к тому, что мы обсуждали.",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "work",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0137",
+    "text": "I don't think we have enough data to decide yet.",
+    "translation": "Не думаю, что у нас достаточно данных для решения.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "work",
+    "tags": ["contraction", "reduction"]
+  },
+  {
+    "id": "p_0138",
+    "text": "Sorry, I think my connection's a little laggy right now.",
+    "translation": "Извините, у меня, кажется, лагает связь.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "work",
+    "tags": ["contraction", "reduction"]
+  },
+  {
+    "id": "p_0139",
+    "text": "Do you want me to take the first pass at this?",
+    "translation": "Хочешь, я сделаю первый вариант?",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "work",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0140",
+    "text": "I'd like to flag a couple of things before we start.",
+    "translation": "Хочу отметить пару моментов перед началом.",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "work",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0141",
+    "text": "I don't think that's the whole story, to be honest.",
+    "translation": "Не думаю, что это вся история, если честно.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "disagreement",
+    "tags": ["contraction", "reduction", "connector"]
+  },
+  {
+    "id": "p_0142",
+    "text": "Sorry to interrupt, but I'm not sure that's accurate.",
+    "translation": "Простите, что перебиваю, но это вряд ли точно.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "disagreement",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0143",
+    "text": "I hear you, but I'm not totally sold on it.",
+    "translation": "Понимаю, но меня это не до конца убеждает.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "disagreement",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0144",
+    "text": "I don't want to be difficult, but I disagree.",
+    "translation": "Не хочу вредничать, но я не согласен.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "disagreement",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0145",
+    "text": "Yeah, but that doesn't really explain what happened last week.",
+    "translation": "Да, но это не объясняет, что случилось на прошлой неделе.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "disagreement",
+    "tags": ["contraction", "reduction", "connector"]
+  },
+  {
+    "id": "p_0146",
+    "text": "I get your point, but we've tried that before.",
+    "translation": "Понимаю, но мы это уже пробовали.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "disagreement",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0147",
+    "text": "Could we look at this from a different angle for a second?",
+    "translation": "Может, посмотрим на это под другим углом?",
+    "wordCount": 12,
+    "difficulty": 3,
+    "category": "disagreement",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0148",
+    "text": "I'm not saying you're wrong, I'm just saying it's complicated.",
+    "translation": "Я не говорю, что ты не прав, просто всё сложно.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "disagreement",
+    "tags": ["contraction", "reduction", "connector"]
+  },
+  {
+    "id": "p_0149",
+    "text": "That might work, but I'm worried about the timeline.",
+    "translation": "Может сработать, но меня беспокоят сроки.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "disagreement",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0150",
+    "text": "That's fair, but I think there's another angle to consider.",
+    "translation": "Справедливо, но есть и другой аспект.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "disagreement",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0151",
+    "text": "It kind of grew on me after a while.",
+    "translation": "Со временем он мне как-то полюбился.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "casual",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0152",
+    "text": "You've gotta try the new place down the street.",
+    "translation": "Ты должен попробовать новое место на соседней улице.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "casual",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0153",
+    "text": "I was gonna text you, but I totally forgot.",
+    "translation": "Я собирался тебе написать, но совсем забыл.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "casual",
+    "tags": ["linking", "connector"]
+  },
+  {
+    "id": "p_0154",
+    "text": "It's one of those things you just have to see.",
+    "translation": "Это из тех вещей, которые надо просто увидеть.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "casual",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0155",
+    "text": "I wasn't expecting that, but I'm kinda into it.",
+    "translation": "Не ожидал, но мне вроде нравится.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "casual",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0156",
+    "text": "To be honest, I'm kinda over the whole thing.",
+    "translation": "Честно говоря, меня это уже достало.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "casual",
+    "tags": ["contraction", "linking", "filler"]
+  },
+  {
+    "id": "p_0157",
+    "text": "Hey, whatcha gonna do after work, anything fun?",
+    "translation": "Эй, чем займёшься после работы, что-нибудь весёлое?",
+    "wordCount": 8,
+    "difficulty": 3,
+    "category": "casual",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0158",
+    "text": "We should've left earlier, there was so much traffic.",
+    "translation": "Надо было выехать раньше, были жуткие пробки.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "casual",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0159",
+    "text": "I can't believe it's already October, where did the year go?",
+    "translation": "Не верится, что уже октябрь, куда год делся?",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "casual",
+    "tags": ["contraction", "linking", "question"]
+  },
+  {
+    "id": "p_0160",
+    "text": "It was kind of a mess, but we figured it out.",
+    "translation": "Была неразбериха, но мы разобрались.",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "casual",
+    "tags": ["linking", "connector"]
+  },
+  {
+    "id": "p_0161",
+    "text": "Did you get a chance to see the game last night?",
+    "translation": "Успел посмотреть вчерашний матч?",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "smalltalk",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0162",
+    "text": "How was your weekend, did you get up to anything fun?",
+    "translation": "Как выходные, делал что-нибудь интересное?",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "smalltalk",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0163",
+    "text": "I've been super busy lately, I barely have time to eat.",
+    "translation": "Я в последнее время так занят, что некогда поесть.",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "smalltalk",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0164",
+    "text": "What are you doing for the holidays this year?",
+    "translation": "Что делаешь на праздники в этом году?",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "smalltalk",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0165",
+    "text": "Do you wanna grab a bite after the meeting?",
+    "translation": "Хочешь перекусить после встречи?",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "smalltalk",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0166",
+    "text": "How long have you been working at the company?",
+    "translation": "Как давно ты работаешь в компании?",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "smalltalk",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0167",
+    "text": "Where did you end up going for your vacation?",
+    "translation": "Куда ты в итоге поехал в отпуск?",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "smalltalk",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0168",
+    "text": "You should come over for dinner sometime, we'd love to have you.",
+    "translation": "Приходи как-нибудь на ужин, будем рады.",
+    "wordCount": 12,
+    "difficulty": 3,
+    "category": "smalltalk",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0169",
+    "text": "Could you do me a favor and send me those notes?",
+    "translation": "Не мог бы ты оказать услугу и прислать заметки?",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0170",
+    "text": "Would you mind giving me a hand with this for a minute?",
+    "translation": "Не поможешь мне с этим минутку?",
+    "wordCount": 12,
+    "difficulty": 3,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0171",
+    "text": "Can you give me a heads up before you send it?",
+    "translation": "Можешь предупредить меня до отправки?",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0172",
+    "text": "Do you think you could pick this up while I'm out?",
+    "translation": "Сможешь взять это на себя, пока меня нет?",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "requests",
+    "tags": ["contraction", "linking", "question"]
+  },
+  {
+    "id": "p_0173",
+    "text": "I was wondering if you could help me out with something.",
+    "translation": "Мне интересно, не мог бы ты мне кое с чем помочь.",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "requests",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0174",
+    "text": "Can you let me know as soon as you hear back?",
+    "translation": "Дай знать, как только получишь ответ.",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0175",
+    "text": "Sorry to bother you, but do you have a quick minute?",
+    "translation": "Извини, что отвлекаю, у тебя есть минутка?",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0176",
+    "text": "Could I get a bit more information on that, please?",
+    "translation": "Можно чуть больше информации об этом?",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0177",
+    "text": "Would it be okay if I stepped out for a sec?",
+    "translation": "Ничего, если я отлучусь на секунду?",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0178",
+    "text": "Can you tell me where I can find the meeting room?",
+    "translation": "Подскажете, где переговорная?",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0179",
+    "text": "Could you give me a call when you get a chance?",
+    "translation": "Позвони мне, когда будет возможность.",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "requests",
+    "tags": ["linking", "question"]
+  },
+  {
+    "id": "p_0180",
+    "text": "In my opinion, we're spending too much time on this.",
+    "translation": "На мой взгляд, мы тратим на это слишком много времени.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "opinion",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0181",
+    "text": "I think it's a good idea, but it's a lot of work.",
+    "translation": "Думаю, идея хорошая, но работы много.",
+    "wordCount": 12,
+    "difficulty": 3,
+    "category": "opinion",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0182",
+    "text": "Honestly, I think it's kind of overrated, you know?",
+    "translation": "Честно, по-моему, это переоценено, понимаешь?",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "opinion",
+    "tags": ["contraction", "linking", "filler", "question"]
+  },
+  {
+    "id": "p_0183",
+    "text": "If you ask me, we should've done this a long time ago.",
+    "translation": "По-моему, надо было сделать это давно.",
+    "wordCount": 12,
+    "difficulty": 3,
+    "category": "opinion",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0184",
+    "text": "I'd say it depends on what you're trying to do.",
+    "translation": "Я бы сказал, зависит от того, чего ты хочешь добиться.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "opinion",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0185",
+    "text": "It doesn't matter to me, I'm fine with either option.",
+    "translation": "Мне без разницы, любой вариант подойдёт.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "opinion",
+    "tags": ["contraction", "reduction"]
+  },
+  {
+    "id": "p_0186",
+    "text": "I think the second option makes a lot more sense.",
+    "translation": "Думаю, второй вариант гораздо логичнее.",
+    "wordCount": 10,
+    "difficulty": 3,
+    "category": "opinion",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0187",
+    "text": "It's not perfect, but it gets the job done.",
+    "translation": "Не идеально, но своё дело делает.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "opinion",
+    "tags": ["contraction", "reduction", "connector"]
+  },
+  {
+    "id": "p_0188",
+    "text": "I used to hate it, but now I kind of love it.",
+    "translation": "Раньше ненавидел, а теперь вроде как люблю.",
+    "wordCount": 12,
+    "difficulty": 3,
+    "category": "opinion",
+    "tags": ["linking", "connector"]
+  },
+  {
+    "id": "p_0189",
+    "text": "From what I can tell, it's working pretty well so far.",
+    "translation": "Насколько я вижу, пока всё работает неплохо.",
+    "wordCount": 11,
+    "difficulty": 3,
+    "category": "opinion",
+    "tags": ["contraction", "linking"]
+  },
+  {
+    "id": "p_0190",
+    "text": "I think we gotta rethink the whole approach here.",
+    "translation": "Думаю, нам надо переосмыслить весь подход.",
+    "wordCount": 9,
+    "difficulty": 3,
+    "category": "opinion",
+    "tags": ["linking"]
+  },
+  {
+    "id": "p_0191",
+    "text": "So, long story short, we're going to have to push the release back a week or so.",
+    "translation": "Короче говоря, придётся сдвинуть релиз примерно на неделю.",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "transitions",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0192",
+    "text": "Anyway, as I was saying, the whole thing kind of fell apart after the first month.",
+    "translation": "Так вот, как я говорил, всё это развалилось после первого месяца.",
+    "wordCount": 16,
+    "difficulty": 4,
+    "category": "transitions",
+    "tags": ["linking", "connector"]
+  },
+  {
+    "id": "p_0193",
+    "text": "So, basically, what happened is that we ran out of time and had to cut a few things.",
+    "translation": "Короче, у нас закончилось время, и пришлось кое-что вырезать.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "transitions",
+    "tags": ["linking", "connector"]
+  },
+  {
+    "id": "p_0194",
+    "text": "Having said that, I still think it's worth a try, even if it doesn't work out.",
+    "translation": "Тем не менее, думаю, попробовать стоит, даже если не выйдет.",
+    "wordCount": 16,
+    "difficulty": 4,
+    "category": "transitions",
+    "tags": ["contraction", "reduction", "connector"]
+  },
+  {
+    "id": "p_0195",
+    "text": "And that's exactly why I wanted to bring this up before we go any further.",
+    "translation": "Именно поэтому я и хотел поднять эту тему, прежде чем мы пойдём дальше.",
+    "wordCount": 15,
+    "difficulty": 4,
+    "category": "transitions",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0196",
+    "text": "Okay, so here's the thing: we've got a lot of work, and not a lot of time.",
+    "translation": "Вот в чём дело: работы много, а времени мало.",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "transitions",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0197",
+    "text": "Right, so, now that we've covered that, let's go ahead and move on to the budget.",
+    "translation": "Итак, раз с этим разобрались, давайте перейдём к бюджету.",
+    "wordCount": 16,
+    "difficulty": 4,
+    "category": "transitions",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0198",
+    "text": "By the way, before I forget, I need to talk to you about the schedule for next week.",
+    "translation": "Кстати, пока не забыл, мне надо поговорить с тобой о графике на следующую неделю.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "transitions",
+    "tags": ["linking", "connector"]
+  },
+  {
+    "id": "p_0199",
+    "text": "I'm going to need to check with legal first, and then I'll get back to you by Friday.",
+    "translation": "Мне надо сначала уточнить у юристов, а потом я вернусь к вам до пятницы.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0200",
+    "text": "So, if I understand you correctly, you're saying we should hold off until the numbers come in?",
+    "translation": "Если я вас правильно понимаю, вы предлагаете подождать, пока придут цифры?",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["contraction", "connector", "question"]
+  },
+  {
+    "id": "p_0201",
+    "text": "Honestly, it's a long story, so let's catch up later and I'll walk you through the whole thing.",
+    "translation": "Честно, история длинная, так что давай позже созвонимся, и я всё расскажу.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0202",
+    "text": "Just to make sure we're on the same page, you want the report done by Wednesday, right?",
+    "translation": "Чтобы мы друг друга поняли: отчёт нужен к среде, верно?",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["contraction", "linking", "connector", "question"]
+  },
+  {
+    "id": "p_0203",
+    "text": "We'd love to get started on this as soon as possible, but we're still waiting on a couple of approvals.",
+    "translation": "Мы бы хотели начать как можно скорее, но ждём ещё пару согласований.",
+    "wordCount": 20,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0204",
+    "text": "So, what I'm hearing is that the timeline's fine, but the budget is going to be an issue.",
+    "translation": "Я слышу, что со сроками всё нормально, а вот бюджет станет проблемой.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0205",
+    "text": "Let me look into it and see what I can do, but I can't promise anything right now.",
+    "translation": "Дай разберусь и посмотрю, что можно сделать, но ничего не обещаю.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0206",
+    "text": "I wanted to give you a quick heads up that we're probably going to miss the deadline.",
+    "translation": "Хотел заранее предупредить, что мы, скорее всего, не успеем к сроку.",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0207",
+    "text": "Sorry to jump in, but could we go back to the last slide for a second?",
+    "translation": "Простите, что вмешиваюсь, можем вернуться на прошлый слайд на секунду?",
+    "wordCount": 16,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["linking", "connector", "question"]
+  },
+  {
+    "id": "p_0208",
+    "text": "If it's okay with everyone, I'd like to kick things off and then we can open it up for questions.",
+    "translation": "Если никто не против, я начну, а потом откроем вопросы.",
+    "wordCount": 20,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0209",
+    "text": "I'll put together a quick summary of everything we talked about and send it to the whole team.",
+    "translation": "Я подготовлю краткое резюме и разошлю всей команде.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0210",
+    "text": "We've already gone back and forth on this a few times, so let's just pick one and move on.",
+    "translation": "Мы это уже несколько раз обсуждали, так что давайте просто выберем и двинемся дальше.",
+    "wordCount": 19,
+    "difficulty": 4,
+    "category": "work",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0211",
+    "text": "I see what you're saying, but I'm not sure that's going to work given the budget we have.",
+    "translation": "Понимаю, но не уверен, что это сработает при нашем бюджете.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "disagreement",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0212",
+    "text": "That's a fair point, but on the other hand, we've tried that before and it didn't go well.",
+    "translation": "Справедливо, но с другой стороны, мы пробовали, и вышло плохо.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "disagreement",
+    "tags": ["contraction", "connector"]
+  },
+  {
+    "id": "p_0213",
+    "text": "I'd push back on that a little, because I don't think we've really looked at all the options.",
+    "translation": "Я бы возразил, ведь мы вряд ли рассмотрели все варианты.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "disagreement",
+    "tags": ["contraction", "reduction", "connector"]
+  },
+  {
+    "id": "p_0214",
+    "text": "I hear you, but at the end of the day, it's not really up to us to decide.",
+    "translation": "Понимаю, но в конечном счёте не нам это решать.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "disagreement",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0215",
+    "text": "Well, I'm not saying it's a bad idea, I'm just saying it might not be the right time.",
+    "translation": "Я не говорю, что идея плохая, просто время, возможно, не то.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "disagreement",
+    "tags": ["contraction", "reduction", "connector"]
+  },
+  {
+    "id": "p_0216",
+    "text": "Yeah, but if you think about it, that doesn't actually explain why the numbers dropped.",
+    "translation": "Да, но если подумать, это не объясняет, почему цифры упали.",
+    "wordCount": 15,
+    "difficulty": 4,
+    "category": "disagreement",
+    "tags": ["contraction", "reduction", "connector"]
+  },
+  {
+    "id": "p_0217",
+    "text": "I get where you're coming from, but I've gotta be honest, I'm not totally convinced.",
+    "translation": "Понимаю тебя, но если честно, меня не до конца убедили.",
+    "wordCount": 15,
+    "difficulty": 4,
+    "category": "disagreement",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0218",
+    "text": "I was going to say something, but then I figured it wasn't worth getting into it.",
+    "translation": "Хотел что-то сказать, но потом решил, что не стоит ввязываться.",
+    "wordCount": 16,
+    "difficulty": 4,
+    "category": "casual",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0219",
+    "text": "So, why don't we take a quick break, and then we can pick this up again after lunch?",
+    "translation": "Может, сделаем небольшой перерыв, а потом продолжим после обеда?",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "casual",
+    "tags": ["contraction", "linking", "connector", "question"]
+  },
+  {
+    "id": "p_0220",
+    "text": "You know what, I'm kind of tired, so I think I'm gonna head home and call it a night.",
+    "translation": "Знаешь, я устал, так что, пожалуй, поеду домой и закончу на сегодня.",
+    "wordCount": 19,
+    "difficulty": 4,
+    "category": "casual",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0221",
+    "text": "I wasn't gonna go, but my friends talked me into it, and honestly, I'm glad they did.",
+    "translation": "Я не собирался идти, но друзья уговорили, и я рад.",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "casual",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0222",
+    "text": "It's one of those things where you don't really get it until you've actually tried it.",
+    "translation": "Из тех вещей, которые понимаешь, только когда попробуешь.",
+    "wordCount": 16,
+    "difficulty": 4,
+    "category": "casual",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0223",
+    "text": "I kinda wanted to stay in tonight, but I guess we could grab a bite if you want to.",
+    "translation": "Я вроде хотел остаться дома, но можем перекусить, если хочешь.",
+    "wordCount": 19,
+    "difficulty": 4,
+    "category": "casual",
+    "tags": ["linking", "connector"]
+  },
+  {
+    "id": "p_0224",
+    "text": "So, I don't know if you've heard, but they're gonna close the office for a few days next week.",
+    "translation": "Не знаю, слышал ли ты, но офис закроют на несколько дней на следующей неделе.",
+    "wordCount": 19,
+    "difficulty": 4,
+    "category": "casual",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0225",
+    "text": "Hey, long time no see, how have you been, and what have you been up to lately?",
+    "translation": "Привет, сто лет не виделись, как ты и чем занимался?",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "smalltalk",
+    "tags": ["linking", "connector", "question"]
+  },
+  {
+    "id": "p_0226",
+    "text": "So, what are you up to this weekend, are you doing anything or just taking it easy?",
+    "translation": "Что делаешь на выходных, есть планы или просто отдыхаешь?",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "smalltalk",
+    "tags": ["linking", "connector", "question"]
+  },
+  {
+    "id": "p_0227",
+    "text": "It's so good to finally meet you in person, I've heard so many great things about you.",
+    "translation": "Так приятно наконец познакомиться лично, я столько хорошего о вас слышал.",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "smalltalk",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0228",
+    "text": "Did you end up going to that new restaurant, or did you decide to stay home instead?",
+    "translation": "Ты в итоге сходил в тот новый ресторан или остался дома?",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "smalltalk",
+    "tags": ["linking", "connector", "question"]
+  },
+  {
+    "id": "p_0229",
+    "text": "By the way, how's your family doing, and are you still planning to visit them this summer?",
+    "translation": "Кстати, как семья, ты всё ещё собираешься навестить их летом?",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "smalltalk",
+    "tags": ["contraction", "linking", "connector", "question"]
+  },
+  {
+    "id": "p_0230",
+    "text": "I've been meaning to ask you, how did you get into this line of work in the first place?",
+    "translation": "Давно хотел спросить, как ты вообще попал в эту сферу?",
+    "wordCount": 19,
+    "difficulty": 4,
+    "category": "smalltalk",
+    "tags": ["contraction", "linking", "connector", "question"]
+  },
+  {
+    "id": "p_0231",
+    "text": "Could you do me a favor and look over this before the meeting, if you have a minute?",
+    "translation": "Не мог бы ты просмотреть это до встречи, если есть минутка?",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "requests",
+    "tags": ["linking", "connector", "question"]
+  },
+  {
+    "id": "p_0232",
+    "text": "I was wondering if you'd mind sending me the notes, because I wasn't able to make it.",
+    "translation": "Не мог бы ты прислать заметки, я не смог прийти.",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "requests",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0233",
+    "text": "Can you give me a heads up when you're done so I can start working on my part?",
+    "translation": "Можешь сообщить, когда закончишь, чтобы я начал свою часть?",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "requests",
+    "tags": ["contraction", "linking", "connector", "question"]
+  },
+  {
+    "id": "p_0234",
+    "text": "Would you be able to walk me through it one more time, because I'm kind of lost?",
+    "translation": "Можешь ещё раз всё объяснить? Я немного запутался.",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "requests",
+    "tags": ["contraction", "linking", "connector", "question"]
+  },
+  {
+    "id": "p_0235",
+    "text": "Hey, sorry to bother you, but do you think you could give me a quick hand with this?",
+    "translation": "Извини, что отвлекаю, поможешь мне с этим?",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "requests",
+    "tags": ["linking", "connector", "question"]
+  },
+  {
+    "id": "p_0236",
+    "text": "If you get a chance, could you go through the document and tell me what you think?",
+    "translation": "Если будет время, посмотри документ и скажи, что думаешь.",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "requests",
+    "tags": ["linking", "connector", "question"]
+  },
+  {
+    "id": "p_0237",
+    "text": "Honestly, I love the idea, but we'd need a lot more time and money to pull it off.",
+    "translation": "Честно, идея мне нравится, но нам нужно гораздо больше времени и денег.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "opinion",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0238",
+    "text": "To be honest, I don't think it's a bad product, it's just that it's kind of overpriced.",
+    "translation": "Честно, продукт неплохой, просто дороговат.",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "opinion",
+    "tags": ["contraction", "linking", "connector"]
+  },
+  {
+    "id": "p_0239",
+    "text": "I mean, if you ask me, we should've gone with the first option, but whatever, it's done.",
+    "translation": "Я считаю, надо было брать первый вариант, но ладно, дело сделано.",
+    "wordCount": 17,
+    "difficulty": 4,
+    "category": "opinion",
+    "tags": ["contraction", "linking", "filler", "connector"]
+  },
+  {
+    "id": "p_0240",
+    "text": "It's not that I don't like it, it's just that I'm not really sure it's what we need.",
+    "translation": "Не то чтобы мне не нравится, просто не уверен, что это то, что нам нужно.",
+    "wordCount": 18,
+    "difficulty": 4,
+    "category": "opinion",
+    "tags": ["contraction", "reduction", "connector"]
+  }
+]

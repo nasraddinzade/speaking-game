@@ -1,0 +1,21 @@
+{
+  "name": "speaking-game",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Falling-phrase game for training fluent spoken English",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "start": "node launcher/start.cjs",
+    "serve": "node launcher/start.cjs --no-browser"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  }
+}
